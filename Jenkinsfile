@@ -22,10 +22,10 @@ pipeline {
                 """
             }
         }
-        stage('delete images') {
-            steps {
+         post {
+            always {
                 bat """
-                docker rmi "\$(docker images)"
+                docker rmi $(docker images)
                 """
             }
         }
