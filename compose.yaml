@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: node_container
+    image_name: node_image
+    volumes:
+      - .:/code
+    networks:
+      - mynetwork
+    ports:
+      - "1111:1111"
