@@ -22,5 +22,12 @@ pipeline {
                 """
             }
         }
+        stage('delete images') {
+            steps {
+                bat """
+                docker rmi "\$(docker images)"
+                """
+            }
+        }
     }
 }
