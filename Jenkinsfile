@@ -24,9 +24,9 @@ pipeline {
         }
          post {
             always {
-                bat """
+                bat '''
                 docker rmi $(docker images)
-                """
+                '''
             }
         }
     }
