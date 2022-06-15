@@ -2,7 +2,7 @@ services:
   web:
     build: .
     container_name: node_container
-    image_name: node_image
+    image: node_image
     volumes:
       - .:/code
     networks:
