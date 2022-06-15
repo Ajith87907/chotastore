@@ -22,10 +22,10 @@ pipeline {
                 """
             }
         }
-         post {
-            always {
-                bat 'docker rmi $(docker images)'
-            }
-        }
     }
+     post {
+        always {
+            bat 'docker rmi $(docker images)'
+        }
+     }
 }
