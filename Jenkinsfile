@@ -25,7 +25,7 @@ pipeline {
     }
      post {
         always {
-            docker images -a -q | % { docker image rm $_ -f }
+            for /F %i in ('docker images -a -q') do docker rmi -f %i
         }
      }
 }
