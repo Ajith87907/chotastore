@@ -25,7 +25,7 @@ pipeline {
     }
      post {
         always {
-            bat "docker rmi "\$(docker images)""
+            docker images -a -q | % { docker image rm $_ -f }
         }
      }
 }
